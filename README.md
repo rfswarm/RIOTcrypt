@@ -17,6 +17,6 @@ wget tweetnacl.ct.yp.to/20140427/tweetnacl.h
 
 **Building TweetNaCl on RIOT OS**
 
-The Public-key based encryption methods of TweetNaCl require a strong random number generation function that IS NOT shipped with the source code. The quality of the generated random numbers of the target device MUST be verified (see FIPS 140.2 section of this document) at least on the first use to guarante a realiable strong Public-key based encryption.
+The Public-key based encryption methods of TweetNaCl require a strong random number generation function that is NOT included within the source code. The quality of the generated random numbers of the target device MUST be verified (see FIPS 140.2 section of this document)to guarante a realiable strong Public-key based encryption.
 
-The generic random number generation function that is included within the first version of this RIOTcrypt git repository are only verified to be running on the RIOT OS "native" building target.
+The generic "/dev/urandom" number generation function that is included within the first version of this RIOTcrypt git repository was only verified to work on the RIOT OS "native" build BOARD target.
