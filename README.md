@@ -19,4 +19,15 @@ wget tweetnacl.ct.yp.to/20140427/tweetnacl.h
 
 The Public-key based encryption methods of TweetNaCl **require a strong random number generation function that is NOT included within the source code**. The quality of the generated random numbers of the target device MUST be verified (see FIPS 140.2 section of this document)to guarante a realiable strong Public-key based encryption.
 
-The generic "/dev/urandom" number generation function that is included within the first version of this RIOTcrypt git repository was only verified to work on the RIOT OS "native" build BOARD target.
+The generic "/dev/urandom" number generation function that is included within the first version of this RIOTcrypt git repository was only verified to work on the RIOT OS "native" makefile/build target.
+
+## Important: Random number generation
+
+Strong random numbers are an essencial part of strong crypto systems and the importance should never be underestimated. The FIPS 140.2 standard published by beloved NIST specifies four statistical tests for randomness:
+
+1. Monobit
+2. Poker
+3. Runs
+4. Long Run
+
+This is the minimum amount of tests that should be performed to analyse the quality of the generated random numbers on the target system or platform. The rngtest.c soure code within this RIOTcrypt repository is part of rng-tools. The soure code can also be downloaded from the authors/project homepage: https://kernel.googlesource.com/pub/scm/utils/kernel/rng-tools/rng-tools/+/master/contrib/rngtest.c.
